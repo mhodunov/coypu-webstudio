@@ -1,0 +1,22 @@
+{
+  "name": "coypu-webstudio",
+  "version": "1.0.0",
+  "description": "Building WordPress website for web studio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhodunov/coypu-webstudio.git"
+  },
+  "author": "Maksym Hodunov, Anton Rozhko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhodunov/coypu-webstudio/issues"
+  },
+  "homepage": "https://github.com/mhodunov/coypu-webstudio#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
