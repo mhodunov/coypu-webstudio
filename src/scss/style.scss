@@ -1,0 +1,20 @@
+body {
+  font-size: 30px;
+  display: flex;
+}
+
+span {
+  font-size: 15px;
+  @media screen and (min-width: 726px) {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+div {
+  font-size: 15px;
+
+  @media screen and (min-width: 726px) {
+    font: 500;
+  }
+}

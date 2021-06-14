@@ -17,6 +17,19 @@
   },
   "homepage": "https://github.com/mhodunov/coypu-webstudio#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "rename": "^1.0.4"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^8.0.0"
   }
 }
