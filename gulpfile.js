@@ -1,5 +1,4 @@
 const fileinclude = require('gulp-file-include');
-const imagemin = require('gulp-imagemin');
 
 let project_folder = "dist";
 let source_folder = "src";
@@ -40,7 +39,12 @@ let { src, dest } = require('gulp'),
     group_media = require('gulp-group-css-media-queries'),
     clean_css = require('gulp-clean-css'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify-es').default;
+    uglify = require('gulp-uglify-es').default,
+    imagemin = require('gulp-imagemin'),
+    webp = require('gulp-webp'),
+    webphtml = require('gulp-webp-html'),
+    webpcss = require('gulp-webp-css'),
+    svgSprite = require('gulp-svg-sprite');
 
 
 function browserSync(params) {
@@ -57,12 +61,20 @@ function browserSync(params) {
 function html() {
   return src(path.src.html)
           .pipe(fileinclude())
+          .pipe(webphtml())
           .pipe(dest(path.build.html))
           .pipe(browsersync.stream())
 };
 
 function images() {
   return src(path.src.img)
+          .pipe(
+            webp({
+              quality: 70
+            })
+          )
+          .pipe(dest(path.build.img))
+          .pipe(src(path.src.img))
           .pipe(
             imagemin({
               progressive: true,
@@ -102,6 +114,7 @@ function css() {
               cascade: true
             })
           )
+          .pipe(webpcss())
           .pipe(dest(path.build.css))
           .pipe(clean_css())
           .pipe(
@@ -112,6 +125,10 @@ function css() {
           .pipe(dest(path.build.css))
           .pipe(browsersync.stream())
 };
+
+gulp.task('svgSprite', function () {
+
+})
 
 function watchFiles(params) {
   gulp.watch([path.watch.html], html),
